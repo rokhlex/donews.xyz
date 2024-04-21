@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Slab', sans-serif;
+    line-height: 1.6;
+    color: #19a3ff;
+    background-color: white;
+    background-size: contain;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding:200px;
+    text-align: center;
+}
+
+.things-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+.things-card {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 20px;
+    width: calc(33.333% - 13.333px);
+}
+
+.things-card h2 {
+    color: #333;
+}
+
+.things-card .date {
+    color: #777;
+}
+
+.things-card .content {
+    margin-top: 10px;
+    color: #555;
+}
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoTrade</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Выставите свой товар и заключите сделку!</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert">{{ messages[0] }}</div>
+        {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('upload_things') }}" method="post" enctype="multipart/form-data" class="center">
+            <div class="input-group">
+                <label for="file">Выберите файл с информацией о товаре в формате xlsx:</label>
+                <input type="file" name="file" id="file" accept=".xlsx">
+            </div>
+            <div class="input-group">
+                <label for="password">Код из СМС:</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="input-group">
+                <button type="submit">Выставить</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
